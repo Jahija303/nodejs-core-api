@@ -1,0 +1,31 @@
+# FIXME: Database port/config/host/etc should come from .env
+
+version: '3.7'
+
+services:
+  db_squirrel:
+    image: postgres
+    container_name: db_squirrel
+    hostname: db_squirrel
+    restart: always
+    env_file: .env
+    ports:
+      - '5435:5432'
+    expose:
+      # Opens port 3306 on the container
+      - 5435
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgre
+      POSTGRES_DB: squirrelDB
+    networks:
+      backend:
+        aliases:
+          - db_squirrel
+    volumes:
+      - db_squirrel:/pgdata/
+networks:
+  backend:
+volumes:
+  db_squirrel:
+    name: db_squirrel

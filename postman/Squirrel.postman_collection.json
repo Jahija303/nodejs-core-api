@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "cf796568-1717-469d-a407-44e6eb6fb2d8",
+		"name": "Squirrel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get User by email",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "nathan@slickrocksolutions.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7557/api/user/getUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"user",
+						"getUser"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "kr@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7557/api/user/getAllUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"user",
+						"getAllUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Jerry",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Smith",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "jerry1985@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7557/api/user/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"user",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7557/api/user/deleteUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"user",
+						"deleteUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "firstName",
+							"value": "Nathan",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Smith",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "nathan@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "harambe33",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7557/api/user/updateUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"user",
+						"updateUser"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "15",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
