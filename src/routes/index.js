@@ -1,17 +1,14 @@
-import { Router } from 'express';
-const userRoute = require('./user.route');
+import { Router } from 'express'
+import { userRouter, usersRouter } from './user.route'
+import authRoute from './auth.route'
+import passwordRoute from './password.route'
+import { passportJWTAuth as requireAuthentication } from '../middlewares/auth'
 
-const router = Router();
+const router = Router()
 
-const defaultRoutes = [
-  {
-    path: '/user',
-    route: userRoute,
-  }
-];
+router.use('/user', requireAuthentication, userRouter);
+router.use('/users', requireAuthentication, usersRouter);
+router.use('/auth', authRoute);
+router.use('/password', passwordRoute);
 
-defaultRoutes.forEach((route) => {
-  router.use(route.path, route.route);
-});
-
-export default router;
+export default router

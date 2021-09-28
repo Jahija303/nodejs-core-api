@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 module.exports = {
   development: {
     username: process.env.DB_USERNAME,
@@ -7,15 +7,14 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: 'postgres',
-    define: {
-      timestamps: false,
-    }
+    logging: false,
   },
   test: {
-    username: 'root',
-    password: null,
-    database: 'database_test',
-    host: '127.0.0.1',
+    username: 'postgres',
+    password: 'postgre',
+    database: 'squirrelDB',
+    host: 'localhost',
+    port: 5435,
     dialect: 'postgres',
   },
   production: {
@@ -25,4 +24,4 @@ module.exports = {
     host: '127.0.0.1',
     dialect: 'postgres',
   },
-};
+}

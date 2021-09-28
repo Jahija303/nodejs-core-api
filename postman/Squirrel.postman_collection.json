@@ -6,25 +6,29 @@
 	},
 	"item": [
 		{
-			"name": "Get User by email",
+			"name": "Get User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": " eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGFzc3dvcmQiOiIkMmIkMTAkMWw3TmlIYi5zSmpzQy5INU1zS3RjLkZQWkpBZHFwOU9ydXhBSjFkT0U4eFE1MVNNYndFamEiLCJpYXQiOjE2MjYzMzYyNTIsImV4cCI6MTYyNjMzNzE1Mn0.rpOwO4D56DrU49A93_SfWDkQLeazAkcC71_Z8YMbcIAYCnvbULo_uQIsqe9JZSQw7MlTHf0Qi21rVRN2CE7XnvuLfEa4UBNdWuyyGATzeTtdeHRDVXhD_szcWbj_HHdk9lm2R30BTVVpv4koCaIKI-HGJ1JMuGBCDD_tR58QmNatkwjrvyT9h97vzf9m7az5jMNIi2GrTt785lOxRvdzXxAY3jdPq1svYJI4X3UEatSH8SquH-Z7ZL3X_piWpX3V_e-VqsCf0N3sXvZPpG3HHTI3qQvP_okgsCYO4_DzIx8lxwTQBNaaoBhcQYpa6RFCH3leNit1DvYpv1M0pCkGUYZVoAthyzZnLbz1j8aTPQI8hJhaLGIAULJpGKMQjFgog4E9jbtRkutqHxIm2SWP0YT3gQEyWBrRe99-lEFcNfcIifjuqM9LfAbwBTi7m2ZbRzp92yXdYn732VeCLCmV1p1W7lQNlyG7bsGFJ3b1jkgjtBTkUiKcGkxrsptdEQTi9As4iL6Zav9gEVo27bEbE_yj9objzFdBkkhWGObaFosQDi7bCDhwdorVaTpqsVaXfDOsyjv4ziYr0WvM_PpWNIu1ansbbEwE_kUhJm47laaMDqow0xFuZ48B5PRLiDrxfu6CcAgMSCJTT_HIs4NOMdcDFbGEqcznhOvNRiH7Bls",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "email",
-							"value": "nathan@slickrocksolutions.com",
-							"type": "text"
-						}
-					]
+					"urlencoded": []
 				},
 				"url": {
-					"raw": "http://localhost:7557/api/user/getUser",
+					"raw": "http://localhost:7557/api/user/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -33,7 +37,7 @@
 					"path": [
 						"api",
 						"user",
-						"getUser"
+						""
 					],
 					"query": [
 						{
@@ -48,57 +52,35 @@
 		},
 		{
 			"name": "Get All Users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:7557/api/user/getAllUsers",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "7557",
-					"path": [
-						"api",
-						"user",
-						"getAllUsers"
-					]
-				}
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
 			},
-			"response": []
-		},
-		{
-			"name": "Create User",
 			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
+				"auth": {
+					"type": "bearer",
+					"bearer": [
 						{
-							"key": "firstName",
-							"value": "Jerry",
-							"type": "text"
-						},
-						{
-							"key": "lastName",
-							"value": "Smith",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "jerry1985@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "12345",
-							"type": "text"
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGFzc3dvcmQiOiIkMmIkMTAkTFpwZHE4L3FzUDdTbUpZYVhhaXBYLjJNbmlZUHRBN2guMjFQOVQ4Lngud2NtL01Dc0ZYbEciLCJpYXQiOjE2MjYzNTM1MzQsImV4cCI6MTYyNjM1NDQzNH0.c5tE0mn6xHeEKlncdDu2VpCCAoFkdwO72sBE2B19vTBsUSMCHl49clpm9SsGRKjnuXQJ9f5PkGL9LhRIGWfW9VExQwyMXdfSDHjAJ1zvI5idLsFFVYxr5ha1FzNpSn9U7VtKmOfBQLyZJ-30aHsf0oT5sEYhmZA38g8gmos3nFFbR2NWc5rYZqndTpu4oyJNMRkNniKj9aAJIL-iXd1OA8BA5KptbS4snb7GZVuSykIHUXCNsJwRKGDkJCYv0Siht0q12OvXXnLZT4RO4NoqwMagveQytbzqVNBPcO2AYtPr7oVPuFwaXq-JTPrIhXzuwBZXHOIuaUBj2i44xC2fYBQaPfECBWQuoixOtSC5nk6lqn7e4aBsXNLHG_wfcPERCJ03tE9O1Oa-u_T8AuvAcexOHbvr1ov_035fYHmi738TIBnW_5RCb3PyV3OzUSsB91Sr7WjxN3rjL6Ark92eSqSB9LgpQYbKLtRITxg6Ei2EEpsSctaEBnzCeVgs8p1rR6OFGDIqXZTyXfuqaT8HrQbVXazcm-6UJF6RAbx4rejoByMTSDWBzHrPEjiVIjN7o27Ul0RPHEiL81lwZVPOJ85r6J0-JUJjAtF2I2X0RNKmoF4mridd87Ca9P8rc3_N_pgLybTMN-xXPyBXBbX4tREZsf41AuWmvGCmZjp8ZIc",
+							"type": "string"
 						}
 					]
 				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYyNDk2MTcxMjQ2MywiZXhwIjoxNjI0OTYxNzk4ODYzfQ.TRZCYCipcBvEI2wSo1MwvnDCxTE7AbIH13X9AkTjYJcvjTqot0DZ3BQAP9XuS8SiEqwwPkG6v9txXwSssx79Cp6X2dl1QhfuDzncziuu8BzmYdv8-Yg2dJT5ZsRZh3tpC_UOCE56R3B6UmcFA1U9xme1GC3f7bOvYEsJXYH-PAzqAvre-SiHnPOe-i4za0IiIzAnh3CmaxZMreXUnAOYF6OylNYjBL1EK16A45CLSyeOeU1dK3-yBc4odWevC9xhrg7i4s7fE2Yszm8R2023TvOcjyAWAWny6d-_q4Aju8h717ENkRl-U78y4BqA9JWn0pWYKwqFd0n9c9xzTW8XzTdx77vPQm-yCrchT5eHJIMAhwrHD35x-2sYfkKJ-_VSd5vD8ZKFOZj5dzxMXuFge3zqY8_tewelCecnKwA5PIAr2Y9gRLtgYUok_7rhPJfCqVFDbCMJcljxglm9sJk2gtqlKlxegwKTE118xrVfTDCLu4iqhQX_eXw6XQLe-5z9diSr6Ihp96eGlszS6hgjolz2kNXAce6_XSsrG7wp3eQs62X6ZS8iLpwlZe6zZzIAOIPWIJq-8ylBlWy-QhLFBDIIpTJvtXSNujaJ-zqwcWygmlptHTKn75aU3ds098NPPUtHvsugFEbJA9QggjFHB4-DWaw_pnlV0vxMDpkCebs",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
-					"raw": "http://localhost:7557/api/user/createUser",
+					"raw": "http://localhost:7557/api/users/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -106,8 +88,8 @@
 					"port": "7557",
 					"path": [
 						"api",
-						"user",
-						"createUser"
+						"users",
+						""
 					]
 				}
 			},
@@ -116,6 +98,16 @@
 		{
 			"name": "Delete User by ID",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGFzc3dvcmQiOiIkMmIkMTAkTFpwZHE4L3FzUDdTbUpZYVhhaXBYLjJNbmlZUHRBN2guMjFQOVQ4Lngud2NtL01Dc0ZYbEciLCJpYXQiOjE2MjYzNTE1NjIsImV4cCI6MTYyNjM1MjQ2Mn0.btaDK5jUJsPlrLpgWt8XQ7vQOQm1v4tmDm2X0B3DroX0qIpQ0mjzS2EoQIpDA2tic32KmJwjRW8Q06xNDjmhIMA8TFhewJPEMQsBAW6JqMEREbYo1UO2ekIr5AJbO_Fl5BUwldCTxXNBOnkWF50AbntR1BZijiBMbmMkydZZlPYi6g5xiAt9wD3dgVggQ9SZV3O8mYqRl4HI-TDU6C1Ypiuz1N3qn-zweINPDsITcy57gFzNNbpAcD5ZzQ6DncxfUiIa99PkQPgfef19az_gPkbt5DwR7uBLSfis0KgeS-0cTY8bhymcjmDoD8kuTp56pcZ-dQbH270as1dBwtaapqDNM5LwvSrkaQntDmHYLuPoKenRGYNQoMrOsoR5_DSq7FCfC1RdkEuddwb4XtapeyPEQnXycUUgBHDj1j6IAoVIdbPY3OzztQKbR6dyewhYT9oMj2UKG7PNURztxP1gwYOeA6eiPuprJM6nNJfbwekHTJdZ0jGwhNIzfs7QapGS86TouyF8E-bxuU9vJFbPaxIHfb3K155BpKycSY9iN8epgA56w5d6jeiIgxpVv8lTRs56U8XG8YNKhBLk4SHypIiKAhR5v68yghH_bVwi0gtzPP_rxwbgmHdKFs4bZ3MH-cjsm0br1M9SfiNEb7IKyBUwaO45cfLkXiyUEYozMYo",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"body": {
@@ -129,7 +121,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:7557/api/user/deleteUser",
+					"raw": "http://localhost:7557/api/user/delete",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -138,7 +130,7 @@
 					"path": [
 						"api",
 						"user",
-						"deleteUser"
+						"delete"
 					]
 				}
 			},
@@ -147,19 +139,81 @@
 		{
 			"name": "Update User",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGFzc3dvcmQiOiIkMmIkMTAkTFpwZHE4L3FzUDdTbUpZYVhhaXBYLjJNbmlZUHRBN2guMjFQOVQ4Lngud2NtL01Dc0ZYbEciLCJpYXQiOjE2MjYzNTY5NTgsImV4cCI6MTYyNjM1Nzg1OH0.QO1lFb6q1IQnr-jM12Dq8s8wED5HSYcj3cm-KcuKGw2D4qRDObqeWNlidWFW59f-cq9JRsOjl3uhX91fd0idOwYjLOnCb9O_m9GuVrDtS4lRSaeyFaA5Smj3VNnB_nIQy-XzluCX6oax6L4DmKajqSJ0WiyYKlfIVGPw79LJ9wepI7BAFNFTkUkdDs9RLf15nlsyST6k5YvRXqvvfnBB83WtBB0l15pFp0Wz04QDWAanSISdk50_VaZvpmWaIJXeUh5dit-wRfHJxqtIK-Ncr8BDYIwFI1rZIBFLKY8cYL4GAVbxnKPxFz2kMMgr48TgRruujkRTXK57h7p_sxGCxq8cidMtr9P-JM1vQnhi4p36SxFUeF-biVFGDzj43G46fS_NKxWVYQD-Y4ySnfSrEgMAshIz4o9M1L9EPjhT5_Dc0FO1nCtIF_YstOOmeQe0198YyJPmT-12EM6zWfSrOhGDy8klbfpAaZjTlatjFlTrKAfoMgwUMMXeBLJmEDdmDbWnPdWVCJeTjFEmX4J5jccv-imZdFsQkVkuJ60nYHRYA2y5G6Eu1Cz27USPSaQ2REUvwUR6KxLmhBYGwHNYm_Wfbi4A485R_xeGTcXuadPKP757Z-5Y0Z0AQytIpmuMdwJh0k3g0FlsLnGsxzBul8sLe7Tv_W_zOwcYR6AlHrY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "id",
-							"value": "1",
+							"key": "firstName",
+							"value": "admin",
 							"type": "text"
 						},
 						{
+							"key": "lastName",
+							"value": "company",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@company.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test1234*",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7557/api/user/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"user",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "15",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
 							"key": "firstName",
-							"value": "Nathan",
+							"value": "Beth",
 							"type": "text"
 						},
 						{
@@ -169,18 +223,18 @@
 						},
 						{
 							"key": "email",
-							"value": "nathan@gmail.com",
+							"value": "beth@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "harambe33",
+							"value": "Test1234*",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:7557/api/user/updateUser",
+					"raw": "http://localhost:7557/api/auth/signup",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -188,15 +242,154 @@
 					"port": "7557",
 					"path": [
 						"api",
-						"user",
-						"updateUser"
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "admin@company.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test1234*",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7557/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"auth",
+						"login"
 					],
 					"query": [
 						{
-							"key": "id",
-							"value": "15",
+							"key": "email",
+							"value": "nathan@slickrocksolutions.com",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123",
 							"disabled": true
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Password Reset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTYyNTEzOTI3OCwiZXhwIjoxNjI1MTQwMTc4fQ.evSummm1fJqX5SffCiD8pwPaqmiDtDWuQDls1obk5XI0AOf9FKPxBCbzP_I7cmmV2bKlKVO7FqKkdxeLqWvtd5JmmlPiKX9uPk0sDhjGEpHV429TwdG0O_jzqiZscoaUXVXg8gB0rNPqKUZAMMR_iTkP1ZVsOFhOjHk-NLt8kNEnc6tT4btTsd9ZQChhBGFtGPVCV2Ev_JIK-_alJxasXuxlbArolxwV_elpRFcQ_hh-9dnjwJTbUHFUrdoVuYVvKiG-R6sJ8_xCO5RLBozCTAOr9mPNdblWDd5msNOOVbzVrLOWi1Si0PUmxJ2hbQnxcae-lEQ87U7tjKcfxr6362GVZqVAUUvTMEFVVW7GolGo0ZGZtVQIMpTXnB5h9kaDVLb0krgXpdfE32W2n2jD0qu84xc77J1jvQmTlfwQ8WfhKskv-LP3y06VqefB-_EmjWUmt9tmHxBwv5Cc5UTP-JraGTRxBLJp8sz5yQdWyku3PwzeGt9ce-1Bw4-z2gHuWasy-554VyjZQD8SFx8umvSrjm8AGZGl_WcF3Hk2CawQ48qPTVX1LHl546V4grbhX6Ug-SV-qipYnZ8M82gPXV_kTpelYKN1BG3g1n9SwoLc05MAQyado7B9n1W8RbFTwfbh9uFntoGrdQ1Ld6jOIvUXcrc0rQTjjCE9Oznzk44",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "admin@company.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7557/api/password/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"password",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "password",
+							"value": "Test1234*",
+							"type": "text"
+						},
+						{
+							"key": "confirmPassword",
+							"value": "Test1234*",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7557/api/password/usetoken/1/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI2MzU4MDcwLCJleHAiOjE2MjYzNjE2NzB9.G8dtK9F7rzRKP4tndQOdggIwPmIYcz_oiCOSYCrtd6Q",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api",
+						"password",
+						"usetoken",
+						"1",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI2MzU4MDcwLCJleHAiOjE2MjYzNjE2NzB9.G8dtK9F7rzRKP4tndQOdggIwPmIYcz_oiCOSYCrtd6Q"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7557/api-docs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7557",
+					"path": [
+						"api-docs"
 					]
 				}
 			},

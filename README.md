@@ -9,10 +9,6 @@
 - `npx sequelize-cli db:migrate`
 - `npx sequelize-cli db:seed:all`
 
-# unit testing
-
-- `npx jest`
-
 # Deployment
 
 Coming Soon
